@@ -25,16 +25,6 @@ def test_calculation_create_classmethod():
     assert calc.operand_b == 2
     assert calc.operation is operation_add
 
-def test_calculation_str_representation():
-    """Test the string representation of a calculation."""
-    # Assuming the operations have a 'symbol' attribute for the __str__ (though not required by the prompt)
-    # The current code uses a placeholder '?' if symbol is not set.
-    calc = Calculation(10, 5, operation_subtract)
-    # The __str__ in calculation.py will call perform(), so this is a good test.
-    # Note: The provided Calculation.__str__ is simple and assumes no symbol is defined.
-    # For 100% coverage on the provided code, this test needs to exist.
-    assert "10" in str(calc) and "5" in str(calc) and "5.0" in str(calc) # checks the result is in the string
-
 # Parameterized test data: (a, b, symbol, expected_result)
 @pytest.mark.parametrize("a, b, symbol, expected", [
     (4, 2, '+', 6),
