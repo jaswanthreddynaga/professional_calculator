@@ -25,7 +25,8 @@ jobs:
         
     - name: Run tests with coverage
       run: |
-        # Run pytest, measure coverage on the 'app' directory, and generate a report
+        # Set the PYTHONPATH to include the current directory (project root)
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
         pytest --cov=app --cov-report=term-missing tests/
         
     - name: Check 100% coverage compliance
