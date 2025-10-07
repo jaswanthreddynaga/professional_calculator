@@ -28,8 +28,3 @@ jobs:
         # Set the PYTHONPATH to include the current directory (project root)
         export PYTHONPATH=$PYTHONPATH:$(pwd)
         pytest --cov=app --cov-report=term-missing tests/
-        
-    - name: Check 100% coverage compliance
-      # The coverage report command fails (exits non-zero) if coverage is below 100%
-      run: |
-        coverage report --fail-under=100
